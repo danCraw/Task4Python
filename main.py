@@ -9,9 +9,9 @@ def readLineFromFile(fileName):
 
 
 def numberIt(line):
-    result = re.split('[.\\\!\\\?]', line)
+    result = re.split('(?<=[.?!])\s+', line)
 
-    for i in range(len(result) - 1):
+    for i in range(len(result)):
         result[i] = result[i] + '[' + str(i + 1) + ']'
 
     print(result)
